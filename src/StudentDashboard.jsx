@@ -119,13 +119,17 @@ export default function StudentDashboard({ students: studentList }) {
   // Task 6a: Class Warning Badge (some)
   const checkHasFailingScores = () => {
     // TODO: Use students.some() to return true if ANY student has Math, Physics, or Chemistry < 30
-    return false; // Replace this line
+    return students.some((student) => {
+      return student.Chemistry < 30 || student.Physics < 30 || student.Math < 30 ;
+    }); // Replace this line
   };
 
   // Task 6b: High Performing Banner (every)
   const checkIsHighPerformingClass = () => {
     // TODO: Use students.every() to return true if EVERY student has Grade "A" or "B+"
-    return false; // Replace this line
+    return students.every((student) => {
+      return student.Grade === "A" || student.Grade === "B+";
+    }); // Replace this line
   };
 
   // Task 7a: Class Analytics (reduce)
