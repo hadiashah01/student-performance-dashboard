@@ -58,7 +58,9 @@ export default function StudentDashboard({ students: studentList }) {
     const targetRoll = parseInt(searchRollNo, 10);
 
     // TODO: Use students.find() to get the student object matching targetRoll
-    const result = null; // Replace this line
+    const result = students.find((student) => {
+      return student["Roll No."]=== targetRoll;
+    }); // Replace this line
     if (!result) {
       alert("Student not found!");
     }
