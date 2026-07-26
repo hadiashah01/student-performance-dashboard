@@ -168,7 +168,7 @@ export default function StudentDashboard({ students: studentList }) {
   // Task 8: Honor Roll Top 3 Preview (slice)
   const getTopThreeStudents = () => {
     // TODO: Use students.slice() to return a copy of the first 3 students
-    return students.slice(0, 3);// Replace this line
+    return students.slice(0, 3); // Replace this line
   };
 
   // Task 9a & 9c: Add New Student (push / unshift)
@@ -179,8 +179,10 @@ export default function StudentDashboard({ students: studentList }) {
 
     if (isPriority) {
       // TODO: Use .unshift() to add newStudent to the START of updatedList
+      updatedList.unshift(newStudent);
     } else {
       // TODO: Use .push() to add newStudent to the END of updatedList
+      updatedList.push(newStudent);
     }
 
     setStudents(updatedList);
@@ -205,6 +207,7 @@ export default function StudentDashboard({ students: studentList }) {
     if (students.length === 0) return;
     const updatedList = [...students];
     // TODO: Use updatedList.pop() to remove the last student
+    updatedList.pop();
     setStudents(updatedList);
   };
 
@@ -213,6 +216,7 @@ export default function StudentDashboard({ students: studentList }) {
     if (students.length === 0) return;
     const updatedList = [...students];
     // TODO: Use updatedList.shift() to remove the first student
+    updatedList.shift();
     setStudents(updatedList);
   };
 
