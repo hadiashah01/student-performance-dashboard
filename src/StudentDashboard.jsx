@@ -120,7 +120,9 @@ export default function StudentDashboard({ students: studentList }) {
   const checkHasFailingScores = () => {
     // TODO: Use students.some() to return true if ANY student has Math, Physics, or Chemistry < 30
     return students.some((student) => {
-      return student.Chemistry < 30 || student.Physics < 30 || student.Math < 30 ;
+      return (
+        student.Chemistry < 30 || student.Physics < 30 || student.Math < 30
+      );
     }); // Replace this line
   };
 
@@ -136,7 +138,9 @@ export default function StudentDashboard({ students: studentList }) {
   const getAverageMathScore = () => {
     if (students.length === 0) return 0;
     // TODO: Use students.reduce() to sum Math scores and calculate average
-    const totalMath = 0; // Replace this line
+    const totalMath = students.reduce((sum, student) => {
+      return sum + student.Math;
+    }, 0);
     return (totalMath / students.length).toFixed(1);
   };
 
@@ -144,14 +148,21 @@ export default function StudentDashboard({ students: studentList }) {
   const getAveragePhysicsScore = () => {
     if (students.length === 0) return 0;
     // TODO: Use students.reduce() to sum Physics scores and calculate average
-    const totalPhysics = 0; // Replace this line
+    const totalPhysics = students.reduce((sum, student) => {
+      return sum + student.Physics;
+    }, 0);
     return (totalPhysics / students.length).toFixed(1);
   };
 
   // Task 7c: Class Analytics (reduce)
   const getTotalAGrades = () => {
     // TODO: Use students.reduce() to count total number of students with Grade === "A"
-    return 0; // Replace this line
+    return students.reduce((sum, student) => {
+      if (student.Grade === "A") {
+        sum += 1;
+      }
+      return sum;
+    }, 0);
   };
 
   // Task 8: Honor Roll Top 3 Preview (slice)
