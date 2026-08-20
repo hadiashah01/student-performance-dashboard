@@ -1,144 +1,98 @@
-# 🎓 React Array Methods Lab: Student Performance Dashboard
+# React Array Methods Lab — Student Performance Dashboard
 
-Welcome to the **Student Performance Dashboard Lab**! This assignment is designed to give you practical, hands-on experience with core JavaScript Array methods inside a modern React application.
+A JavaScript project focused on implementing **15 JavaScript Array Methods** within an existing React dashboard.
 
-You will work with a simulated industry workflow: **forking a repository**, **implementing state logic to satisfy strict unit tests**, achieving **100% test coverage**, and **submitting your work via a Pull Request (PR)**.
+This repository started from an existing assignment codebase. I forked the repository and completed the marked `TODO` sections in `StudentDashboard.jsx`, implementing the required array-method logic and verifying the completed implementation with the project test suite.
 
----
+## Table of Contents
 
-## 🎯 Learning Objectives
+- [Array Methods Implemented](#array-methods-implemented)
+- [Implementation Focus](#implementation-focus)
+- [Testing](#testing)
+- [Technologies in the Starter Project](#technologies-in-the-starter-project)
+- [Repository Context](#repository-context)
+- [Status](#status)
+- [References](#references)
+- [Author](#author)
 
-By completing this lab, you will master:
 
-- **Array Search & Selection:** `find()`, `findLast()`, `findIndex()`, `findLastIndex()`
-- **Array Transformation & Filtering:** `filter()`, `slice()`, `splice()`
-- **Array Aggregation:** `reduce()`, `forEach()`
-- **Array Iteration Checks:** `some()`, `every()`
-- **Queue & Stack Mutation:** `push()`, `unshift()`, `pop()`, `shift()`
-- **Testing & Coverage:** Reading **Vitest** output and achieving 100% statement, branch, function, and line coverage.
+## Array Methods Implemented
 
----
+| Array Method | Implementation |
+|---|---|
+| `forEach()` | Log student directory information |
+| `filter()` | Filter students by grade |
+| `find()` | Search for a student by roll number |
+| `findLast()` | Find the last student with an `A` grade |
+| `findIndex()` | Locate a student before deletion |
+| `findLastIndex()` | Find the last at-risk student |
+| `some()` | Check for failing scores |
+| `every()` | Check whether all students meet the required grade condition |
+| `reduce()` | Calculate class statistics |
+| `slice()` | Get the first three students |
+| `splice()` | Remove students by index |
+| `push()` | Add a student to the end of the array |
+| `unshift()` | Add a priority student to the beginning of the array |
+| `pop()` | Remove the last student |
+| `shift()` | Remove the first student |
 
-## ⚠️ Important Rules
+## Implementation Focus
 
-> [!IMPORTANT]
->
-> 1. **Only modify `src/StudentDashboard.jsx`**: Do **not** edit test files or component props unless explicitly instructed.
-> 2. **Do not alter test files**: The test suite inside `src/__tests__/StudentDashboard.test.jsx` is your source of truth and contains **100% expected coverage**. Your job is to complete the component code to pass every test.
-> 3. **Preserve immutability**: Always create updated copies of state arrays before mutating them (e.g., `const updatedList = [...students];`) when working with React state setters.
+The implementation covers practical use of JavaScript Array Methods for data handling within the existing dashboard.
 
----
+Key areas include:
 
-## 🚀 Getting Started
+- Searching and filtering arrays
+- Finding elements and indexes
+- Calculating values with `reduce()`
+- Checking conditions with `some()` and `every()`
+- Adding and removing array elements
+- Creating array copies before performing mutations
+- Applying array methods to existing application logic
 
-### Prerequisites
+## Testing
 
-Make sure you have [Node.js](https://nodejs.org/) installed on your system.
+The project includes a test suite for validating the required implementations.
 
-### Step 1: Fork & Clone the Repository
+I installed the project dependencies and ran the available test and coverage commands:
 
-- Click the **Fork** button in the top-right corner of this repository page to create a copy under your GitHub account.
+```bash
+npm install
+npm run test:watch
+npm run test:coverage
+```
+The completed implementation achieved **100% test coverage** according to the final coverage report.
 
-  ![Press Fork button to initiate fork process](./public/how-to-fork-repository-01.png)
+## Technologies in the Starter Project
 
-- Fill in the details for your copy of the repository.
+- JavaScript
+- React
+- Vite
+- Vitest
+  
+**My contribution:** JavaScript Array Method implementations in `StudentDashboard.jsx`.
 
-  ![Fill in the details and submit the repository form](./public/how-to-fork-repository-02.png)
+## Repository Context
 
-- Clone your forked repository to your local machine by running following terminal commands:
+The dashboard UI, React component structure, styling, student data, and project setup were already included in the starter repository.
+My changes are focused on completing the required `TODO` implementations for the JavaScript Array Methods. 
 
-   ```bash
-   git clone https://github.com/shaizCodes/student-performance-dashboard.git
-   cd student-performance-dashboard
-   ```
+## Status
 
-### Step 2: Install Dependencies
+**Completed**
 
-- Install the required packages using `npm`:
+All 15 required JavaScript Array Method implementations were completed and verified against the project test suite.
 
-    ```bash
-    npm install
-    ```
+## References
 
-### Step 3: Run the Development Server
+- [MDN — JavaScript Array Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
+- [MDN — JavaScript Arrays Guide](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Arrays)
+- [React Documentation](https://react.dev/)
+- [Vite Documentation](https://vite.dev/guide/)
 
-- To launch the app in your browser with Vite HMR:
+## Author
 
-    ```bash
-    npm run dev
-    ```
+**Hadia Shah**
 
-## 🧪 Running Tests & Verifying Coverage
-
-This project uses **Vitest** with V8 code coverage instrumentation.
-
-### Run Tests in Watch Mode
-
-- Use this during development to see live feedback as you complete each task:
-
-    ```bash
-    npm run test:watch
-    ```
-
-### Run Tests with 100% Coverage Verification
-
-- Before submitting, verify that all test cases pass with 100% coverage across all metrics:
-
-    ```bash
-    npm run test:coverage
-    ```
-
-- Your final coverage report in the terminal should look like this:
-
-    ```text
-    ----------------------|---------|----------|---------|---------|-------------------
-    File                  | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
-    ----------------------|---------|----------|---------|---------|-------------------
-    All files             |     100 |      100 |     100 |     100 |                   
-     StudentDashboard.jsx |     100 |      100 |     100 |     100 |                   
-    ----------------------|---------|----------|---------|---------|-------------------
-    ```
-
-## 📝 Assignment Tasks Overview
-
-All tasks are marked with `// TODO:` comments inside `src/StudentDashboard.jsx`.
-
-| Task                             | Array Method Focus                        | Description                                                                                        |
-| -------------------------------- | :---------------------------------------- | :------------------------------------------------------------------------------------------------- |
-| Task 1: Directory Logging        | `forEach()`                               | Iterate through the student list and log student directory details in the formatted string layout. |
-| Task 2: Grade Filtering          | `filter()`                                | Dynamically filter the displayed student list based on the user-selected grade option.             |
-| Task 3: Search & Lookup          | `find()`, `findLast()`                    | Implement a student lookup by roll number and find the last student who achieved a Grade "A".      |
-| Task 4: Deletion by Roll Number  | `findIndex()`, `splice()`                 | Locate a student's array index by roll number and safely remove them from the list.                |
-| Task 5: At-Risk Lookup           | `findLastIndex()`                         | Identify the index of the last student flagged as "at-risk" in Chemistry (score < 40).             |
-| Task 6: Status Banners           | `some()`, `every()`                       | Compute boolean status flags to display low-score warning alerts or high-performing class banners. |
-| Task 7: Class Analytics          | `reduce()`                                | Calculate total scores and average class performance metrics across all subjects.                  |
-| Task 8: Honor Roll               | `slice()`                                 | Extract a top 3 student preview from the sorted list without mutating the original array.          |
-| Task 9: Stack & Queue Operations | `push()`, `pop()`, `unshift()`, `shift()` | Implement stack (LIFO) and queue (FIFO) controls to add and remove students dynamically.           |
-| Task 10: Card Removal by Index   | `splice()`                                | Handle direct card removal from the dashboard UI using a target array index.                       |
-
-## 📤 How to Submit Your Assignment
-
-Once all tests pass and your coverage report shows 100%, follow these steps to submit your work:
-
-### Step 1: Commit and Push Your Changes
-
-  ```bash
-  git add src/StudentDashboard.jsx
-  git commit -m "feat(dashboard): complete array methods lab with 100% test coverage"
-  git push origin main
-  ```
-
-### Step 2: Create a Pull Request (PR)
-
-1. Go to your forked repository on GitHub.
-2. Click `Pull requests`, then `New pull request` buttons.
-3. Set the base repository to the original repository and the head repository to your fork.
-4. Fill out the Pull Request Template completely, including your full name, and a screenshot of your 100% coverage report.
-
-## 🛠️ Tech Stack & Tooling
-
-- **Framework:** React
-- **Build Tool:** Vite
-- **Testing Framework:** Vitest + React Testing Library
-- **Coverage Engine:** V8
-- **Linter:** Oxlint
+- GitHub: [@hadiashah01](https://github.com/hadiashah01)
+- LinkedIn: [Hadia Shah](https://www.linkedin.com/in/hadia-shahjahan/)
